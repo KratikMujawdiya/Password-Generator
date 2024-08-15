@@ -1,0 +1,103 @@
+<!-- *Top level container ya wrapper bna rakha jiske andar sara ka sara content aa rha hai jiska background color purple wala gradient hai
+*Iske bad ek div ya ek paragraph ya fir ek heading dikh rahi hai jiske andar likha hai password generator  
+*Iske bad ek div create kiya hai jisme 2 chije dikh rhi hai 1.Input field 2.Input field ke andar button
+*Iske bad ke section me:-
+>Ek div padi hai jisme 2 paragraph hai
+>Iske bad Ek slider bna rakha hai
+>Iske bad ek div bna rakha hai jiske andar ek checkbox aur uska ek lebel pda hai
+>Iske bad 3 aur div hai jisme checkbox aur uske labels diye hai
+*Iske bad ek aur div padi hai jiske andar ek paragraph and aur ek div hai jisme cicle create kar raha hai
+*Iske ek button create kiya huaa hai
+
+*js ke querySelector method me class id tag ke sath custom attribute bhi dal sakte hai
+
+*input tag dalne se box aayega ractangle type ka 
+
+*placeholder jis tag me lagate hai uske andar jagah par jo bhi content dalna hai vo isse hi dalta hai
+
+*`input tag me data-passwordDisplay ek simple sa name diya jo ki input tag ka ek custom attribute hoga ab me chahu to is custom attribute ka use karke querySelector method se isko fetch kar sakta hu
+
+>iframe is a tag which connect one page to another page 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PASSWORD GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Have use some google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>PASSWORD GENERATOR</h1>
+   
+
+      <div class="display-container">
+
+          <input readonly placeholder="password" class="display" data-passwordDisplay><!--readonly is a property which is used for text which can only read-->
+
+          <button class="copyBtn" data-copy>
+            <span class="tooltip" data-copyMsg></span><!--output me copy wale par click karne par ek "copied" taxt aata hai uske liye use kiya hai ||isme data-cpoyMsg custom attribute ye javascript me use hoga ise fetch karne ke liye-->
+             <img src="assets/copy.svg" alt="copy" width="23" height="23">
+          </button>
+
+      </div>
+
+      <div class="input-container">
+
+        <!-- password length section -->
+         <div class="length-container">
+            <p>Password Length</p>
+            <p data-lengthNumber>0</p><!--is 0 ko javascript se change ,slider ke hisab se-->
+         </div>
+
+         <!-- slider -->
+         <input type="range" min="1" max="20" class="slider" step="1"  value="50" data-lengthSlider> <!--data-lengthSlider ek custom attribute hai--><!--step="1" means ek-ek ke step me aage bde-->
+         <!-- step 1 means slider 1 ke interval me chalega jese 4 ke bad 5,5 ke bad 6,6 ke bad 7 -->
+          
+         <!-- checkboxex -->
+         <div class="check">
+            <input type="checkbox" id="uppercase">
+            <label for="uppercase">Includes Uppercase Letters</label>
+         </div>
+
+         <div class="check">
+            <input type="checkbox" id="lowercase">
+            <label for="lowercase">Includes Lowercase Letters</label>
+         </div>
+
+         <div class="check">
+            <input type="checkbox" id="numbers">
+            <label for="numbers">Includes Numbers</label>
+         </div>
+
+         <div class="check">
+            <input type="checkbox" id="symbols">
+            <label for="symbols">Includes Symbols</label>
+         </div>
+
+         <!-- Strenght section -->
+         <div class="strength-container">
+             <p>Strength</p>
+             <div class="indicator" data-indicator></div><!--data-indicator ek custom attribute hai kyoki javascript lagegi ispar -->
+         </div>
+
+         <!-- generate password Button -->
+         <button class="generateButton">Generate Password</button>
+
+      </div>
+
+    </div>
+
+    <!-- Add javascript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
